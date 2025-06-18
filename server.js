@@ -6,7 +6,7 @@ const cookieParser = require("cookie-parser");
 
 const corsOptions = require("./config/corsOptions");
 const credentials = require("./middlewares/credentials");
-const routeHandler = require("./routes");
+const routes = require("./router/routes");
 const { showWelcome, showNotFound } = require("./handlers/views");
 
 const app = express();
@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.get("/", showWelcome);
-app.use("/", routeHandler);
-app.use("*", showNotFound);
+// app.use(routes);
+// app.all("*", showNotFound);
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

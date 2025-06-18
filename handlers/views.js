@@ -1,10 +1,10 @@
 const path = require("path");
 
-const showWelcome = (req, res) => {
+const showWelcome = (_, res) => {
   res.sendFile(path.join(__dirname, "..", "views", "welcome.html"));
 };
 
-const showNotFound = (req, res) => {
+const showNotFound = (_, res) => {
   res.status(404).sendFile(path.join(__dirname, "..", "views", "not_found.html"));
 };
 

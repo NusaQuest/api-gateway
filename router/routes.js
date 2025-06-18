@@ -1,9 +1,12 @@
-const express = require("express")
+const express = require("express");
+const router = express.Router();
 
-const router = express.Router()
+// const authRoutes = require("../services/auth");
+const backendRoutes = require("../services/backend");
+// const aiRoutes = require("../services/ai");
 
-router.use("/auth", require("../services/auth"));
-router.use("/service/backend-service", require("../services/backend"));
-router.use("/service/ai-service", require("../services/ai"));
+// router.use("/auth", authRoutes);
+router.use("/service/backend-service", backendRoutes);
+// router.use("/service/ai-service", aiRoutes);
 
-module.exports = router
+module.exports = router;
