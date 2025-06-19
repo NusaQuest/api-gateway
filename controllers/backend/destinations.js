@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-const BACKEND_SERVICE_URL = require("../../utils/baseUrl");
+const BACKEND_SERVICE_URL = require("../../utils/env");
 
 async function addDestination(req, res) {
   try {
