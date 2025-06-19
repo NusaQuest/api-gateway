@@ -11,9 +11,9 @@ const { validateToken } = require("../middlewares/auth");
 
 const router = express.Router();
 
-router.get("/transactions/:wallet", validateToken, getTransactions);
+router.get("/transactions", validateToken, getTransactions);
 router.post("/transactions", validateToken, addTransaction);
 router.get("/destinations", getDestinations);
-router.post("/destinations", addDestination);
+router.post("/destinations", validateToken, addDestination);
 
 module.exports = router;
